@@ -55,7 +55,7 @@ import { AuditFilterPipe } from './audit-filter.pipe';
           {
             id: GoogleLoginProvider.PROVIDER_ID,
             provider: new GoogleLoginProvider(
-              '180045441762-780pi2bj2a1a2le62s86fj0vo3facd11.apps.googleusercontent.com'
+              'api key'
             )
           }
         ]
