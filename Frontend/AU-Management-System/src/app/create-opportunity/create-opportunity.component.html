@@ -1,0 +1,49 @@
+<div *ngIf = "flag" class = "col-md-7 offset-md-2">
+    <h3>Create Opportunity</h3>
+    <form (ngSubmit) = "onSubmit()" ngNativeValidate>
+
+        <div class = "form-group">
+            <label>Position</label>
+            <input type = "text" class = "form-control" id = "name"
+            [(ngModel)] = "opportunity.name" name = "name" required>
+        </div>
+
+        <div class = "form-group">
+            <label>Skills</label>
+            <input type = "text" class = "form-control" id = "skills"
+            [(ngModel)] = "opportunity.skills" name = "skills" required>
+        </div>
+
+        <div class = "form-group">
+            <label>Location</label>
+            <input type = "text" class = "form-control" id = "locations"
+            [(ngModel)] = "opportunity.locations" name = "locations" required>
+        </div>
+
+        <div class = "form-group">
+            <label>ED</label>
+            <input type = "date" class = "form-control" id = "ed"
+            [(ngModel)] = "opportunity.ed" name = "ed" required>
+        </div>
+
+        <div class = "form-group">
+            <label>Openings</label>
+            <input type = "text" min = "1" class = "form-control" id = "openings"
+            [(ngModel)] = "opportunity.openings" name = "openings"  pattern="^[1-9]\d*$" required>
+        </div>
+
+        <div class = "form-group">
+            <label>Description</label>
+            <input type = "text" class = "form-control" id = "description"
+            [(ngModel)] = "opportunity.description" name = "description" required>
+        </div>
+        
+        <button class = "btn btn-success" type = "submit">Submit</button>
+    </form>
+</div>
+
+<div *ngIf = "!flag">
+    <div class="alert alert-danger" role="alert">
+      Please Sign in with your Google Account to access Opportunities.
+    </div>
+</div>

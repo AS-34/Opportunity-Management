@@ -1,0 +1,42 @@
+<div class = "col-md-7 offset-md-2">
+    <h3>Update Opportunity</h3>
+    <form (ngSubmit) = "onSubmit()">
+        <div class = "form-group">
+            <label>Position</label>
+            <input type = "text" class = "form-control" id = "name"
+            [(ngModel)] = "opportunity.name" name = "name">
+        </div>
+        <div class = "form-group">
+            <label>Location</label>
+            <input type = "text" class = "form-control" id = "skills"
+            [(ngModel)] = "opportunity.skills" name = "skills">
+        </div>
+        <div class = "form-group">
+            <label>Location</label>
+            <input type = "text" class = "form-control" id = "locations"
+            [(ngModel)] = "opportunity.locations" name = "locations">
+        </div>
+        <div class = "form-group">
+            <label>ED</label>
+            <input type = "date" class = "form-control" id = "ed"
+            [(ngModel)] = "opportunity.ed" name = "ed">
+        </div>
+        <div class = "form-group">
+            <label>Openings</label>
+            <input type = "text" class = "form-control" id = "openings"
+            [(ngModel)] = "opportunity.openings" name = "openings">
+        </div>
+        <div class = "form-group">
+            <label>Description</label>
+            <input type = "text" class = "form-control" id = "description"
+            [(ngModel)] = "opportunity.description" name = "description">
+        </div>
+        <button class = "btn btn-success" type = "submit">Submit</button>
+    </form>
+</div>
+
+<div *ngIf = "!flag">
+    <div class="alert alert-danger" role="alert">
+      Please Sign in with your Google Account to access Opportunities.
+    </div>
+</div>

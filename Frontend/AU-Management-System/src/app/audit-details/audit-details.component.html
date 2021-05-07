@@ -1,0 +1,49 @@
+<div *ngIf = "flag" style="width: 1000px;height: 500px; margin: 0 auto;">
+  <div class = "container">
+      <h1><b><u>Audit Details</u></b></h1>
+      <h4><b><u>By:</u></b> {{audit.user}}</h4>
+      <h4><b><u>On:</u></b> {{audit.auditOn}}</h4>
+      <h4><b><u>Action:</u></b> {{audit.action}}</h4>
+  </div>
+  <br>
+  <div class="container">
+      <div class="row">
+        <div class="col-sm">
+          <h4><b><u>Field</u></b></h4>
+          <h6>Position</h6>
+          <h6>Skills</h6>
+          <h6>Location</h6>
+          <h6>ED</h6>
+          <h6>Openings</h6>
+          <h6>Description</h6>
+          <h6>Hiring Manager</h6>
+        </div>
+        <div class="col-sm">
+          <h4><b><u>Before</u></b></h4>
+          <h6>{{audit.name}}</h6>
+          <h6>{{audit.skills}}</h6>
+          <h6>{{audit.locations}}</h6>
+          <h6>{{audit.ed}}</h6>
+          <h6>{{audit.openings}}</h6>
+          <h6>{{audit.description}}</h6>
+          <h6>{{audit.hiringManager}}</h6>
+        </div>
+        <div class="col-sm">
+          <h4><b><u>After</u></b></h4>
+          <h6>{{audit.name1}}</h6>
+          <h6>{{audit.skills1}}</h6>
+          <h6>{{audit.locations1}}</h6>
+          <h6>{{audit.ed1}}</h6>
+          <h6>{{audit.openings1}}</h6>
+          <h6>{{audit.description1}}</h6>
+          <h6>{{audit.hiringManager1}}</h6>
+        </div>
+      </div>
+  </div>
+</div>
+
+<div *ngIf = "!flag">
+  <div class="alert alert-danger" role="alert">
+    Please Sign in with your Google Account to access Opportunities.
+  </div>
+</div>

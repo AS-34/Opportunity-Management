@@ -1,0 +1,56 @@
+<div *ngIf = "flag">
+  <table class="table table-bordered table-hover table-striped">
+    <thead>
+      <tr>
+        <th scope="col"><input type="text" [(ngModel)] = "searchValue1" size = "8"></th>
+        <th scope="col"><input type="text" [(ngModel)] = "searchValue2" size = "10"></th>
+        <th scope="col"><input type="text" [(ngModel)] = "searchValue3" size = "10"></th>
+        <th scope="col"><input type="text" [(ngModel)] = "searchValue4" size = "10"></th>
+        <th scope="col"><input type="date" [(ngModel)] = "searchValue5"size = "10"></th>
+        <th scope="col"><input type="text" [(ngModel)] = "searchValue6"size = "10"></th>
+        <th scope="col">SEARCH BAR</th>
+      </tr>
+    </thead>
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">Position</th>
+      <th scope="col">Skills</th>
+      <th scope="col">Location</th>
+      <th scope="col">ED</th>
+      <th scope="col">Openings</th>
+      <th scope="col">Actions</th>
+    </tr>
+    <tbody>
+      <tr *ngFor = "let opportunity of opportunities | searchFilter: searchValue1: searchValue2: searchValue3: searchValue4: searchValue5: searchValue6">
+        <td>{{opportunity.id}}</td>
+        <td>{{opportunity.name}}</td>
+        <td>{{opportunity.skills}}</td>
+        <td>{{opportunity.locations}}</td>
+        <td>{{opportunity.ed}}</td>
+        <td>{{opportunity.openings}}</td>
+        <td>
+          <button (click) = "updateOpportunity(opportunity.id)" class = "btn btn-info">Update</button>
+          <button (click) = "viewOpportunity(opportunity.id)" class = "btn btn-info" style="margin-left: 10px">View</button>
+          <button
+            class="btn btn-danger"
+            mwlConfirmationPopover
+            [popoverTitle]="popoverTitle"
+            [popoverMessage]="popoverMessage"
+            placement="left"
+            (confirm)="deleteOpportunity(opportunity.id)"
+            (cancel)="false"
+            style="margin-left: 20px"
+          >
+          Delete
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  </div>
+
+<div *ngIf = "!flag">
+  <div class="alert alert-danger" role="alert">
+    Please Sign in with your Google Account to access Opportunities.
+  </div>
+</div>

@@ -1,0 +1,49 @@
+<div *ngIf = "flag" style="width: 700px;height: 230px; margin: 0 auto;">
+    <ngx-charts-bar-vertical
+    [scheme]="colorScheme"
+    [results]="locations"
+    [gradient]="gradient"
+    [xAxis]="showXAxis"
+    [yAxis]="showYAxis"
+    [legend]="showLegend"
+    [showXAxisLabel]="showXAxisLabel"
+    [showYAxisLabel]="showYAxisLabel"
+    [xAxisLabel]="xAxisLabel"
+    [yAxisLabel]="yAxisLabel">
+    </ngx-charts-bar-vertical>
+</div>
+
+<div *ngIf = "flag" style="width: 700px;height: 230px; margin: 0 auto;">
+  <ngx-charts-bar-vertical
+  [scheme]="colorScheme"
+  [results]="positions"
+  [gradient]="gradient"
+  [xAxis]="showXAxis"
+  [yAxis]="showYAxis"
+  [legend]="showLegend"
+  [showXAxisLabel]="showXAxisLabel"
+  [showYAxisLabel]="showYAxisLabel"
+  [xAxisLabel]="xAxisLabel1"
+  [yAxisLabel]="yAxisLabel">
+  </ngx-charts-bar-vertical>
+</div>
+
+<div *ngIf = "flag" style="width: 700px;height: 230px; margin: 0 auto;">
+  <ngx-charts-bar-vertical
+  [scheme]="colorScheme"
+  [results]="skills"
+  [gradient]="gradient"
+  [xAxis]="showXAxis"
+  [yAxis]="showYAxis"
+  [legend]="showLegend"
+  [showXAxisLabel]="showXAxisLabel"
+  [showYAxisLabel]="showYAxisLabel"
+  [xAxisLabel]="xAxisLabel2"
+  [yAxisLabel]="yAxisLabel">
+  </ngx-charts-bar-vertical>
+</div>
+<div *ngIf = "!flag">
+    <div class="alert alert-danger" role="alert">
+      Please Sign in with your Google Account to access Opportunities.
+    </div>
+</div>
